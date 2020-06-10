@@ -1,0 +1,26 @@
+
+{% extends "main/base.html" %}
+
+
+{% load static %}
+
+{% block title %}about{% endblock %}
+
+
+{% block content %}
+	
+ 	<div class="container-fluid">
+		 <div class="row">
+		  <div class="col text-center">
+		  	<h6>Air Quality Index levels:</h6>
+		    <div class="thumbnail">
+		        <img src="{% static 'main/img/aqi.jpg'%}" alt="Lights">
+		       
+		   	</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
+
+

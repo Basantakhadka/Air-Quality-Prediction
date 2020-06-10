@@ -1,0 +1,62 @@
+
+{% extends "main/base.html" %}
+
+{% block title %} home {% endblock %}
+
+{% block content %}
+
+
+    <div class="container-fluid">
+            <div id='map' style='width: 100%; height: 300px;'></div>
+            <script>
+            mapboxgl.accessToken = 'pk.eyJ1IjoiYmFzYW50YWtrayIsImEiOiJja2FwMm9oazAwd2JyMnNwZncxejU3azJjIn0.NrQAfB_L-bK_dYVfFlPbUg';
+            var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            center: [85.326, 27.709], // starting position [lng, lat]
+            zoom: 12
+            });
+            </script>
+                              
+            
+     </div>
+      <hr class="featurette-divider">
+ 
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-4">
+                 <script  type="text/javascript"  charset="utf-8">  
+                    (function(w,d,t,f){  w[f]=w[f]||function(c,k,n){s=w[f],k=s['k']=(s['k']||(k?('&k='+k):''));s['c']=  
+                    c=(c  instanceof  Array)?c:[c];s['n']=n=n||0;L=d.createElement(t),e=d.getElementsByTagName(t)[0];  
+                    L.async=1;L.src='//feed.aqicn.org/feed/'+(c[n].city)+'/'+(c[n].lang||'')+'/feed.v1.js?n='+n+k;  
+                    e.parentNode.insertBefore(L,e);  };  })(  window,document,'script','_aqiFeed'  );    
+                </script>
+                       <span  id="city-aqi-container-display"></span>
+                              <script  type="text/javascript"  charset="utf-8">
+                                  _aqiFeed({
+                                       display:"%details",
+                                       container:"city-aqi-container-display",
+                                       city:"kathmandu"
+                                  });
+                              </script>
+        
+      </div>
+      <div class="col-md-4">
+        <h2>AQI tomorrow</h2>
+        <p>Soon will be integrated. </p>
+        
+      </div>
+      <div class="col-md-4">
+        <h2>AQI:</h2>
+        <p>AQI sands for air qualiy index.Air quality index (AQI) is used by government agencies to communicate to the public how polluted the air currently is or how polluted it is forecast to become.Public health risks increase as the AQI rises. Different countries have their own air quality indices, corresponding to different national air quality standards. Some of these are the Air Quality Health Index (Canada), the Air Pollution Index (Malaysia), and the Pollutant Standards Index (Singapore).</p>
+        
+    </div>
+
+    
+
+  </div> <!-- /container -->
+
+
+{% endblock %}
+

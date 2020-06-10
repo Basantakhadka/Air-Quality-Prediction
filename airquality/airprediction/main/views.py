@@ -1,0 +1,17 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+
+# Create your views here.
+def homepage(request):
+	return render (request,'main/homepage.html')
+
+
+def about(request):
+	return render(request, 'main/about.html')
+
+def past_data(request):
+	return render(request, 'main/past_data.html')
+
+def predict(request):
+	return render(request, 'main/predict.html')
