@@ -9,19 +9,36 @@
 
 {% block content %}
 
-<h1 align="center">Prediction</h1>
+<h1 align="center">Kathmandu AQI Prediction</h1>
 <br>
 
 <div class="container h-100">
   <div class="row h-100 justify-content-center align-items-center">
-    <form action="{% url 'main:predict-data' %}" method="POST" enctype="multipart/form-data">
+    <form action="{% url 'main:predict-aqi' %}" method="POST" enctype="multipart/form-data" class="form-inline my-2 my-lg-0">
     {% csrf_token %}
-    <input type="date" min="2020-05-29" max="2020-12-30">
-    <input class="btn btn-primary" type="submit" value="Predict">
+
+    <input class="form-control mr-sm-2" type="date" name="date" min="2020-09-01" max="2020-09-30">
+    <input class="btn btn-primary" type="submit" value="Predict"><br><br>
 </form>
-  </div>
+</div>
 </div>
 
+{% if actual %}
+<div class="card">
+     <div class="card-body">
+                            <h5 class="card-title"> AQI : {{actual}} </h5>
+                            <a  class="btn btn-default moderate ">Moderate</a>
+                            <p>(51-100) Air quality is acceptable.<br> However, there may be a risk for some people,particularly those who are unusually sensitive to air pollution.<br>Take care .</p>
+                            <img src="{% static 'main/img/1.1.png'%}" align="right">
 
+                           
+                                      
+                             
+                       
+                                        
+                          </div>
+                      </div>
+
+{% endif %}
 
 {% endblock %}
