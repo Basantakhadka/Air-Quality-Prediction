@@ -26,9 +26,12 @@
 {% if actual %}
 <div class="card">
      <div class="card-body">
+
                             <h5 class="card-title"> AQI : {{actual}} </h5>
-                            <a  class="btn btn-default moderate ">Moderate</a>
-                            <p>(51-100) Air quality is acceptable.<br> However, there may be a risk for some people,particularly those who are unusually sensitive to air pollution.<br>Take care .</p>
+                            <a  class="btn btn-default {{color}} ">{{name}}</a>
+                            <p>{{descp}}</p>
+
+
                             <img src="{% static 'main/img/1.1.png'%}" align="right">
 
                            
