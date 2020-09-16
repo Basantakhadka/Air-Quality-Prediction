@@ -1,0 +1,31 @@
+{% extends "main/base.html" %}
+
+
+{% load static %}
+
+{% block title %}login{% endblock %}
+
+
+{% block content %}
+<hr class="featurette-divider">
+<div class="container h-100">
+  <div class="row h-100 justify-content-center align-items-center">
+		<a href="{% url 'main:download' %}" class="btn btn-primary">Download</a>
+   </div>
+  </div>
+
+{% if user.is_authenticated %}
+
+	<a href="javascript:{document.getElementById('logout').submit()}" onclick="" class=" btn btn-primary" >logout</a>
+
+			<form id="logout" method="POST"  action="{% url 'main:logout' %}">
+				{% csrf_token %}
+				<input type="hidden" />
+				
+			</form>
+		</div>
+	</div>
+
+
+{% endif %}
+{% endblock %}

@@ -1,4 +1,5 @@
 
+{% load static %}
 
 <!DOCTYPE html>
 <html>
@@ -15,50 +16,137 @@
 
 
 	<title>{% block title %} {% endblock %}</title>
+
+	<style>
+
+		.good {background-color:#00e400;}
+		.moderate {background-color:#ffff00;}
+        .Unhealthy_for_Sensitive_Groups {background-color:#ff7e00;}
+		.Unhealthy {background-color:#ff0000;}
+		.Very_Unhealthy {background-color:#8f3f97;}
+		.Hazardous {background-color:#7e0023;}
+		
+
+
+	</style>
 </head>
 <body>
-	<nav class="navbar navbar-dark bg-dark ">
-		  <a class="navbar-brand"><b>Air Quality Prediction Kathmandu</b></a>
-		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-		    <span class="navbar-toggler-icon"></span>
-		  </button>
+	<nav class="navbar navbar-dark bg-dark "> <a class="navbar-brand"><img src="{% static 'main/img/a8.png'%}" style="max-height:45px;"><b>Air Quality Prediction Kathmandu</b></a>
+		  
 
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-		    <ul class="navbar-nav mr-auto">
-		      <li class="nav-item active">
-		        <a class="nav-link" href="{% url 'main:home-page' %}">Home<span class="sr-only">(current)</span></a>
+		  
+		    <ul class="nav justify-content-end ">
+			  <li class="nav-item ">
+		        <a class="nav-link text-light bg-dark" href="{% url 'main:home-page' %}">Home<span class="sr-only">(current)</span></a>
 		      </li>
 		      <li class="nav-item">
-		        <a class="nav-link" href="{% url 'main:about-us' %}">About</a>
+		        <a class="nav-link text-light bg-dark" href="{% url 'main:about-us' %}">About</a>
 		      </li>
-		      <li class="nav-item dropdown">
-		        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-		         
-		        </a>
-		        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-		          <a class="dropdown-item" href="{% url 'main:predict-data' %}">Predict</a>
-		          <a class="dropdown-item" href="{% url 'main:past-data' %}">Past Data</a>
+		      <li class="nav-item">
+		          <a class="nav-link text-light bg-dark" href="{% url 'main:predict-data' %}">Predict</a>
+		       </li>
+		       <li class="nav-item">  
+		          <a class="nav-link text-light bg-dark" href="{% url 'main:past-data' %}">Past Data</a>
 		          
-		        </div>
+		        
 		      </li>
-		    
-		    </ul>
+		      <li class="nav-item">  
+		          <a class="nav-link text-light bg-dark" href="#bottom" target="_self">Contact us</a>
+		          
+		        
+		      </li>
+			</ul>
 
 		    
 		</div>
 	</nav>
-	<hr class="featurette-divider">
+
 	<main role='main'>
 		
 		{% block content %} {% endblock %}
 		
     </main>
-    <hr class="featurette-divider">
+    <hr class="featurette-divider border-0">
 
 
-		 <footer class="container">
-		 	<p class="float-right">
-		  <p>&copy; airqualityprediction -Achs @2020</p>
+		 <footer class=" page-footer font-medium unique-color-dark text-light bg-dark" id="bottom">
+
+							<hr class="featurette-divider">
+							  <!-- Footer Links -->
+							  <div class="container text-center text-md-left mt-5">
+							    
+
+							    <!-- Grid row -->
+							    <div class="row mt-3">
+
+							      <!-- Grid column -->
+							      <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+
+							        <!-- Content -->
+							        <h6 class="text-uppercase font-weight-bold">Project</h6>
+							        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+							        <p>AQI sands for air qualiy index.Air quality index (AQI) is used by government agencies to communicate to the public how polluted the air currently is or how polluted it's forecast.</p>
+
+							      </div>
+							     
+							      <!-- Grid column -->
+
+							      <!-- Grid column -->
+							      <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+
+							        <!-- Links -->
+							        <h6 class="text-uppercase font-weight-bold">Useful links</h6>
+							        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+							        <p>
+							          <a href="{% url 'main:home-page' %}" class="text-light bg-dark" >Home</a>
+							        </p>
+							        <p>
+							          <a href="{% url 'main:about-us' %}" class="text-light bg-dark" >About</a>
+							        </p>
+							        <p>
+							          <a href="{% url 'main:predict-data' %}"class='text-light bg-dark'>Predict</a>
+							        </p>
+							        <p>
+							          <a href="{% url 'main:past-data' %}"class='text-light bg-dark'>Past_data</a>
+							        </p>
+							        <p>
+							          <a href="{% url 'main:signup' %}"class='text-light bg-dark'>Download dataset</a>
+							        </p>
+
+							      </div>
+							      <!-- Grid column -->
+
+							      <!-- Grid column -->
+							      <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+
+							        <!-- Links -->
+							        <h6 class="text-uppercase font-weight-bold">Contact</h6>
+							        <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+							        <p>
+							          <i class="fas fa-home mr-3"></i> kathmandu, 44600, Nepal</p>
+							        <p>
+							          <i class="fas fa-envelope mr-3"></i>rayriderkhadka5@gmail.com<br>
+							           <i class="fas fa-envelope mr-3"></i>sapkotaumesh4@gmail.com<br>
+							            <i class="fas fa-envelope mr-3"></i>utsavdh@gmail.com<br>
+							             <i class="fas fa-envelope mr-3"></i>nbngc7@gmail.com
+
+							      			</p>
+							        
+							      </div>
+							      <!-- Grid column -->
+
+							    </div>
+							    <!-- Grid row -->
+
+							  </div>
+							  <!-- Footer Links -->
+
+							  <!-- Copyright -->
+							  <div class="footer-copyright text-center py-3">© 2020 Copyright:<b>Airqualityprediction</b>
+							  </div>
+							  <!-- Copyright -->
+
+							
 		</footer>
 		   
 
